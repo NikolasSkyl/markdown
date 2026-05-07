@@ -1,0 +1,8 @@
+// markdown — Markdown to HTML conversion.
+
+@external("c", "donna_markdown_to_html")
+fn donna_markdown_to_html(markdown: String) -> String
+
+/// Convert a Markdown document to an HTML fragment.
+pub fn to_html(markdown: String) -> String:
+  donna_markdown_to_html(markdown)

@@ -1,0 +1,18 @@
+import markdown
+import donna/string
+import unittest/should
+
+pub fn heading_test() -> String:
+  markdown.to_html("# Hello") |> should.equal_string("<h1>Hello</h1>\n")
+
+pub fn paragraph_emphasis_test() -> String:
+  markdown.to_html("Hello *Donna*") |> should.equal_string("<p>Hello <em>Donna</em></p>\n")
+
+pub fn unordered_list_test() -> String:
+  let html = markdown.to_html("- one\n- two")
+  case string.contains(html, "<ul>"):
+    False -> should.fail("expected unordered list")
+    True ->
+      case string.contains(html, "<li>one</li>"):
+        False -> should.fail("expected first list item")
+        True -> string.contains(html, "<li>two</li>") |> should.is_true()
