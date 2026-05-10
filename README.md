@@ -1,9 +1,7 @@
 # markdown
 
 <img src="https://img.shields.io/badge/Donna-markdown-FF6347?style=for-the-badge" alt="Donna markdown"/>
-<a href="https://nikolasskyl.github.io/markdown/">
-  <img src="https://img.shields.io/badge/Docs-Read-2F81F7?style=for-the-badge" alt="Docs - Read"/>
-</a>
+<a href="https://nikolasskyl.github.io/markdown/"><img src="https://img.shields.io/badge/Docs-Read-2F81F7?style=for-the-badge" alt="Docs - Read"/></a>
 <img src="https://img.shields.io/github/actions/workflow/status/NikolasSkyl/markdown/test.yml?branch=main&label=Test&style=for-the-badge" alt="Test status"/>
 
 Markdown to HTML conversion for the [Donna](https://github.com/donna-lang/donna) programming language.
