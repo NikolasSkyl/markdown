@@ -11,15 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install QBE
+      - name: Checkout Donna tools
+        uses: actions/checkout@v4
+        with:
+          repository: donna-lang/donna
+          path: .donna-tools/compiler
+
+      - name: Install build tools and QBE
         shell: bash
         run: |
           set -euo pipefail
           sudo apt-get update
           sudo apt-get install -y build-essential git make
-          git clone --depth 1 https://c9x.me/git/qbe.git qbe
-          make -C qbe
-          sudo make -C qbe install
+          make -C .donna-tools/compiler install-qbe
+          qbe --version || true
 
       - name: Install Donna
         shell: bash
