@@ -1,5 +1,5 @@
 name = "markdown"
-version = "0.1.0"
+version = "0.1.1"
 description = "Markdown to HTML conversion for Donna"
 licences = ["MIT"]
 repository = { type = "github", user = "NikolasSkyl", repo = "markdown" }
