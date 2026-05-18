@@ -55,7 +55,7 @@ char *donna_markdown_to_html(const char *markdown) {
     if (!buf.data) return strdup("");
     buf.data[0] = '\0';
 
-    rc = md_html(markdown, (MD_SIZE)strlen(markdown), donna_md_append, &buf, 0, MD_HTML_FLAG_SKIP_UTF8_BOM);
+    rc = md_html(markdown, (MD_SIZE)strlen(markdown), donna_md_append, &buf, MD_FLAG_TABLES, MD_HTML_FLAG_SKIP_UTF8_BOM);
     if (rc != 0 || buf.failed) {
         free(buf.data);
         return strdup("");
